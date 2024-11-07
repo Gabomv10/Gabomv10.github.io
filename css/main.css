@@ -1,0 +1,182 @@
+.header {
+    background-image: url(../img/bg-header.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.img-logo {
+    width: 40px;
+}
+
+.vh-50 {
+    height: 50vmin;
+}
+
+.card-img-filter {
+    filter: brightness(0.5);
+}
+
+.card {
+    transition-duration: .6s;
+    clip-path: polygon(50% 0, 100% 0, 100% 50%, 100% 100%, 50% 100%, 0 100%, 0 50%, 0 0);
+}
+
+.card-effect:hover .card {
+    clip-path: polygon(50% 0, 50% 0, 100% 50%, 100% 50%, 50% 100%, 50% 100%, 0 50%, 0 50%);
+}
+
+.card-img-overlay {
+    transition-duration: .6s;
+}
+
+.card-effect:hover .card-img-overlay {
+    transform: scale(.9);
+}
+
+.comment {
+    background-image: url(../img/bg-clients.jpeg);
+    background-position: center;
+    background-size: cover;
+}
+
+.comment__img {
+    --tamano:80px;
+    width: var(--tamano);
+    height: var(--tamano);
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 7px 7px 7px 7px rgba(0 0 0 / 0.5);
+    border: 3px ridge #fff;
+}
+
+.transform-turn {
+    transform: rotate(.5turn);
+}
+
+.media-object-img {
+    --tamano: 65px;
+    width: var(--tamano);
+    height: var(--tamano);
+    margin-right: 15px;
+}
+
+.carousel-travel-middle{
+    top: 35%;
+}
+
+
+*, 
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.img-expe {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gallery {
+    width: 85%;
+    max-width: 1200px;
+    margin: auto;
+    background-color: red;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 133px);
+    grid-auto-rows: 200px;
+    justify-content: center;
+}
+
+.gallery-item {
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    overflow: hidden;
+    display: inline-block; 
+    border: 2px solid #fff;
+    background-color: #ccc; 
+}
+
+.img-fixed {
+    width: 100%;
+    height: 200px; 
+    object-fit: cover; 
+  }
+  
+.transform-turn-1 {
+    transform: rotate(0.5turn);
+    display: block; 
+    margin: 0 auto; 
+}
+
+.container {
+    padding-top: 0; 
+}
+
+.tour-card {
+    transition: transform 0.2s;
+}
+
+.tour-card:hover {
+    transform: scale(1.05);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.btn-reservar {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ffcc00; 
+    color: white; 
+    padding: 15px 20px; 
+    border: none; 
+    border-radius: 50px; 
+    font-size: 18px; 
+    text-align: center;
+    text-decoration: none; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+    transition: background-color 0.3s, transform 0.3s; 
+}
+
+.btn-reservar:hover {
+    background-color: #e0b800; 
+    transform: translateY(-3px); 
+}
+
+.reservar-form {
+    background-color: rgba(255, 255, 255, 0.8); 
+    border-radius: 15px; 
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
+    backdrop-filter: blur(10px); 
+}
+
+.reservar-form .form-group label {
+    font-weight: bold; 
+    color: #333; 
+}
+
+.reservar-form .form-control {
+    border-radius: 10px; 
+    border: 1px solid #ccc; 
+    transition: border-color 0.3s; 
+}
+
+.reservar-form .form-control:focus {
+    border-color: #ffcc00; 
+    box-shadow: 0 0 5px rgba(255, 204, 0, 0.5); 
+}
+
+.btn-reservar-1 {
+    width: 100%; 
+    transition: background-color 0.3s ease;
+}
+
+.btn-reservar-1:hover {
+    background-color: #d39e00; 
+}

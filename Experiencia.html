@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Travel Dream - Comentarios</title>
+  <link rel="stylesheet" href="./css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="./css/main.css" />
+  <link rel="icon" href="img/logo-white.svg" sizes="16x16" type="image/png">
+</head>
+<body>
+
+  <header class="header">
+    <div class="container vh-50">
+      <nav class="row text-white justify-content-between align-items-center text-uppercase pt-4">
+        <a href="#" class="col-auto text-reset">
+          <img src="./img/logo-white.svg" alt="Logo Travel" class="img-logo"/>
+          Travel Dream
+        </a>
+        <div class="col-auto">
+          <a href="index.html" class="text-reset pr-3">Inicio</a>
+          <a href="Experiencia.html" class="text-reset pr-3">Experiencias</a>
+          <a href="Tours.html" class="text-reset pr-3">Tours/Reservas</a>
+          <a href="Contacto.html" class="text-reset">Contactos</a>
+        </div>
+      </nav>
+    </div>
+    <div class="row h-100 align-items-center">
+      <div class="col-12 text-white text-center">
+          
+          <h1 class="text-capitalize"><span class="text-warning h2">Experiencias</span><br>Tu viaje, nuestra pasión.</h1>
+      </div>
+    </div>
+    <img src="./img/cuts/cut-header.svg" alt=""/>
+  </header>
+
+
+  <section class="container my-5">
+    <h4 class="text-warning text-center">Comentarios de nuestros visitantes</h4>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card my-3">
+          <img src="img/Clientes/2.jpeg" alt="Ana Martínez" class="card-img-top img-fixed">
+          <div class="card-body">
+            <h5 class="card-title text-warning">Ana Martínez</h5>
+            <p class="card-text">¡Qué aventura increíble! Las actividades de excursión fueron de primera calidad y los guías conocían cada detalle del lugar.</p>
+            <small class="text-muted">Octubre 15, 2024</small>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card my-3">
+          <img src="img/Clientes/1.jpeg" alt="Carlos Pérez" class="card-img-top img-fixed">
+          <div class="card-body">
+            <h5 class="card-title text-warning">Carlos Pérez</h5>
+            <p class="card-text">Me encantó la experiencia en el resort. Perfecto para relajarme y desconectar. ¡Definitivamente regresaré!</p>
+            <small class="text-muted">Octubre 20, 2024</small>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card my-3">
+          <img src="img/Clientes/3.jpeg" alt="Lucía Fernández" class="card-img-top img-fixed">
+          <div class="card-body">
+            <h5 class="card-title text-warning">Lucía Fernández</h5>
+            <p class="card-text">El camping fue espectacular, ver el amanecer en las montañas es algo que nunca olvidaré.</p>
+            <small class="text-muted">Octubre 25, 2024</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>  
+
+
+  <section class="container my-5">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h3 class="text-warning text-uppercase h6">Deja tu comentario</h3>
+        <h2 class="text-capitalize">Comparte tu experiencia con nosotros</h2>
+      </div>
+      <div class="col-12 col-md-8 mx-auto">
+        <form id="commentForm" class="mb-4">
+          <div class="form-group">
+            <label for="name">Nombre</label>
+            <input type="text" class="form-control" id="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Correo electrónico</label>
+            <input type="email" class="form-control" id="email" required>
+          </div>
+          <div class="form-group">
+            <label for="comment">Comentario</label>
+            <textarea class="form-control" id="comment" rows="4" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-warning text-white">Enviar comentario</button>
+        </form>
+
+      
+        <div id="commentsList">
+          <h4 class="text-warning mt-4">Comentarios recientes</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="comment linear-white">
+    <img src="img/cuts/cut-header.svg" alt="" class="transform-turn-1" />
+    <div class="container">
+    </div>
+  </section>
+
+
+  <script>
+
+    function cargarComentarios() {
+      const commentSection = document.getElementById("commentsList");
+      commentSection.innerHTML = ""; 
+
+      comentarios.forEach(comentario => {
+        const comentarioHtml = `
+          <div class="col-md-4">
+            <div class="card mb-4">
+              <div class="card-body">
+                <h5 class="card-title text-warning">${comentario.nombre}</h5>
+                <p class="card-text">${comentario.comentario}</p>
+                <p class="text-muted"><small>${comentario.fecha}</small></p>
+              </div>
+            </div>
+          </div>
+        `;
+        commentSection.innerHTML += comentarioHtml;
+      });
+    }
+
+   
+    document.getElementById("commentForm").addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value;
+      const commentText = document.getElementById("comment").value;
+
+      const commentElement = document.createElement("div");
+      commentElement.classList.add("comment", "my-3", "p-3", "bg-light", "border", "rounded", "d-flex");
+
+      commentElement.innerHTML = `
+        <div>
+          <h5 class="text-warning">${name}</h5>
+          <p>${commentText}</p>
+          <small class="text-muted">${new Date().toLocaleDateString()} - ${new Date().toLocaleTimeString()}</small>
+        </div>
+      `;
+
+      document.getElementById("commentsList").appendChild(commentElement);
+      document.getElementById("commentForm").reset();
+    });
+
+    document.addEventListener("DOMContentLoaded", cargarComentarios);
+  </script>
+
+  
+  <script src="./js/jquery-3.5.0.min.js"></script>
+  <script src="./js/popper.min.js"></script>
+  <script src="./js/bootstrap.min.js"></script>
+</body>
+</html>
